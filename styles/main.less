@@ -1,7 +1,4 @@
-/* L'option less est là pour donner accés au CSS présent dans bootstrap directement dans LESS
-   Une autre option serait de prendre la version LESS de bootstrap, le but ici n'est pas d'apprendre les mixins de bootstrap mais bien les rudiments de LESS.
-*/
-@import (less) "vendors/bootstrap.css";
+@import "vendors/bootstrap.less";
 
 // Mixin
 .trop-mignon(@color) {
@@ -19,12 +16,11 @@
 
 // Nesting
 body {
-  // Extend
-  &:extend(.container);
+  .container;
   header {
-    &:extend(.row);
+    .make-row;
     h1, h2 {
-      &:extend(.col-xs-6);
+      .make-xs-column(6);
     }
     h1 {
       .trop-mignon(@main-color);
