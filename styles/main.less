@@ -1,0 +1,11 @@
+@import (less) "vendors/bootstrap.css";
+
+body {
+  &:extend(.container);
+  header {
+    &:extend(.row);
+    h1, h2 {
+      &:extend(.col-xs-6);
+    }
+  }
+}
