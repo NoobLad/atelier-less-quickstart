@@ -3,13 +3,35 @@
 */
 @import (less) "vendors/bootstrap.css";
 
+// Mixin
+.trop-mignon(@color) {
+  background-color: @color;
+}
 
+// Variables
+@main-color: #c7ddef;
+
+// Ruleset
+@seconde-color-node: {
+  // Mixin call
+  .trop-mignon(#ce8483);
+};
+
+// Nesting
 body {
+  // Extend
   &:extend(.container);
   header {
     &:extend(.row);
     h1, h2 {
       &:extend(.col-xs-6);
+    }
+    h1 {
+      .trop-mignon(@main-color);
+    }
+    h2 {
+      // Ruleset call
+      @seconde-color-node();
     }
   }
 }
